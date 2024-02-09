@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICE</title>
+</head>
+<body>
+    <script>
+        /* ---- EXECICE DE LA PAGE 76 
+        var i, tab = [], nombre = parseInt(prompt("vous avez combien de frères et sœurs ?"));
+            for(i=1;i<=nombre;i++){
+             tab.push((prompt("entrez un prénom")));
+            }
+            alert("Les prénoms de vos frères et sœurs sont :"+'\n' +tab.join('\n'));
+        ---- */
+         
+            tab1 = ['', 'cent-', 'deux-cent-','trois-cent-','quatre-cent-','cinq-cent-','six-cent-','sept-cent-','huit-cent-','neuf-cent-'],
+            tab2 = ['', 'dix-', 'vingt-','trente-','quarante-','cinquante-','soixante-','soixante-dix-','quatre-vingt-','quatre-vingt-dix-'],
+            tab3 = ['', 'un', 'deux','trois','quatre','cinq','six','sept','huit','neuf'],
+            tab4 = ['', 'onze', 'douze','treize','quatorze','quinze','seize','dix-sept','dix-huit','dix-neuf'];
+            tab5 = ['', 'onze', 'douze','treize','quatorze','quinze','seize','dix-sept','dix-huit','dix-neuf'];
+                function conversion(){
+
+                    var nombre = parseInt(prompt("entrez un nombre entre 0 et 999"), 10),
+                        n_3 = nombre % 10,
+                        n_2 = (nombre % 100 - n_3) / 10,                
+                        n_1 = (nombre % 1000 - nombre % 100) / 100;
+                        /*if (isNaN(nombre) || nombre < 0 || 999 < nombre) {
+                        return(parseInt( 'Veuillez entrer un nombre entier compris entre 0 et 999.'));
+                    }else*/ if(n_2 == 1 && n_3 >0){
+                        return("votre nombre "+nombre+ " est "+tab1[n_1]+tab4[n_3]+ " en lettre");
+                    }else if(n_2 == 7 || n_2 == 9){
+                        return("votre nombre "+nombre+ " est "+tab1[n_1]+tab2[n_2-1]+tab5[n_3]+ " en lettre");
+                    }else{
+                        return("votre nombre "+nombre+ " est "+tab1[n_1]+tab2[n_2]+tab3[n_3]+ " en lettre");
+                    }
+
+                }
+                    alert(conversion());
+
+                        var i, a = parseInt(prompt("entrer le nombre de chiffre que vous allez entrer à la suite de ce test!!"));
+                    for(i = 1; i <= a; i++){
+                        var bob;
+                        alert(conversion(bob));
+                    }
+    </script>
+</body>
+</html>
